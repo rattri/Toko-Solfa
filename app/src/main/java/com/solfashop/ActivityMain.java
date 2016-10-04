@@ -13,8 +13,7 @@ import android.view.View;
 
 import com.solfashop.fragment.BaseFragment;
 import com.solfashop.fragment.HomeFragment;
-import com.solfashop.fragment.OrderFragment;
-import com.solfashop.fragment.PriceFragment;
+//import com.solfashop.fragment.PriceFragment;
 
 /**
  * Created by Ratri on 9/30/2016.
@@ -38,15 +37,15 @@ public class ActivityMain extends BaseActivity{
                 manager.beginTransaction().replace(R.id.container, HomeFragment.newInstance("INI HOME")).commit();
                 isParrentView = true;
                 break;
-            case FRAGMENT_ORDER:
-                manager.beginTransaction().replace(R.id.container, OrderFragment.newInstance("INI ORDER")).commit();
-                isParrentView = false;
-                break;
-            case FRAGMENT_PRICELIST:
-                manager.beginTransaction().replace(R.id.container, PriceFragment.newInstance("INI PRICE")).commit();
-                isParrentView = false;
-                //id_kategori = caller.getExtras().getString("id");
-                break;
+//            case FRAGMENT_ORDER:
+//                manager.beginTransaction().replace(R.id.container, OrderFragment.newInstance("INI ORDER")).commit();
+//                isParrentView = false;
+//                break;
+//            case FRAGMENT_PRICELIST:
+//                manager.beginTransaction().replace(R.id.container, PriceFragment.newInstance("INI PRICE")).commit();
+//                isParrentView = false;
+//                //id_kategori = caller.getExtras().getString("id");
+//                break;
         }
 
         setupToolbar();

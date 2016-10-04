@@ -61,9 +61,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener{
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
-        adapter.addFragment(new OrderFragment(), "ONE");
-        adapter.addFragment(new OrderFragment(), "TWO");
-        adapter.addFragment(new OrderFragment(), "THREE");
+        adapter.addFragment(new GameFragments(), "GAME");
+        adapter.addFragment(new GameFragments(), "TWO");
+        adapter.addFragment(new GameFragments(), "THREE");
         viewPager.setAdapter(adapter);
     }
 
