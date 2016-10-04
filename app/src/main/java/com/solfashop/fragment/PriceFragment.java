@@ -2,6 +2,9 @@ package com.solfashop.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,33 +13,38 @@ import android.widget.TextView;
 
 import com.solfashop.BaseActivity;
 import com.solfashop.R;
+import com.solfashop.adapter.OrderAdapter;
+import com.solfashop.model.Order;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Ratri on 9/30/2016.
  */
 public class PriceFragment extends BaseFragment implements View.OnClickListener{
-    TextView textHome;
+
+    RecyclerView recyclerView;
+    OrderAdapter orderAdapter;
     String message;
     Button btnHome, btnOrder, btnPrice;
+    CardView cv;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.price_fragment, container, false);
+        View v = inflater.inflate(R.layout.order_fragment, container, false);
         baseActivity = (BaseActivity) getActivity();
-        textHome = (TextView) v.findViewById(R.id.text_home);
-        btnHome = (Button) v.findViewById(R.id.btn_home);
-        btnOrder = (Button) v.findViewById(R.id.btn_order);
-        btnPrice = (Button) v.findViewById(R.id.btn_price);
-        textHome.setText(message);
+        baseActivity.setBaseFragment(this);/*WAJIB ADA*/
+        //setTitle("Order");
 
-        btnHome.setOnClickListener(homeOnClick());
-        btnOrder.setOnClickListener(this);
-        btnPrice.setOnClickListener(new priceOnClick("ini ID", 7));
+        recyclerView = (RecyclerView) v.findViewById(R.id.rv_order);
+        orderAdapter = new OrderAdapter(getContext());
 
-        baseActivity.setBaseFragment(this); /*WAJIB ADA*/
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(orderAdapter);
 
-        setTitle("Price List");
+        orderAdapter.initData();
 
         return v;
     }
@@ -46,6 +54,9 @@ public class PriceFragment extends BaseFragment implements View.OnClickListener{
         fragment.message = message;
         return fragment;
     }
+
+
+
 
     @Override
     public void onClick(View view) {
@@ -67,6 +78,8 @@ public class PriceFragment extends BaseFragment implements View.OnClickListener{
             }
         };
     }
+
+
 
     class priceOnClick implements View.OnClickListener{
         String id;

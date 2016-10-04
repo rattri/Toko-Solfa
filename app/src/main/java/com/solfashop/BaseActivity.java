@@ -64,6 +64,14 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void startFragmentPricelist (int TYPE, String judul, String id) {
+        Intent i = new Intent(this, ActivityMain.class);
+        i.putExtra(KEY_FRAGMENT, TYPE);
+        i.putExtra("judul", judul);
+        i.putExtra("id", id);
+        startActivity(i);
+    }
+
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START))drawer.closeDrawer(GravityCompat.START);

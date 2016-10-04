@@ -2,10 +2,14 @@ package com.solfashop.model;
 
 import android.view.View;
 
+import com.solfashop.BaseActivity;
+import com.solfashop.fragment.BaseFragment;
+
 /**
  * Created by Ratri on 10/3/2016.
  */
-public class Order {
+public class Order extends BaseFragment {
+
     String produk;
     int harga;
     int jumlah;
@@ -57,6 +61,7 @@ public class Order {
             @Override
             public void onClick(View view) {
                 System.out.println("klik di "+getProduk());
+                getBaseActivity().startFragment(BaseActivity.FRAGMENT_PRICELIST, "PriceList FRAGMENT");
             }
         };
     }

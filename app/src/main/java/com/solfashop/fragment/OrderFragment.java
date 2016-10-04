@@ -2,6 +2,7 @@ package com.solfashop.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -27,6 +28,7 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener{
     OrderAdapter orderAdapter;
     String message;
     Button btnHome, btnOrder, btnPrice;
+    CardView cv;
 
     @Nullable
     @Override
@@ -34,7 +36,7 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener{
         View v = inflater.inflate(R.layout.order_fragment, container, false);
         baseActivity = (BaseActivity) getActivity();
         baseActivity.setBaseFragment(this);/*WAJIB ADA*/
-        setTitle("Order");
+        //setTitle("Order");
 
         recyclerView = (RecyclerView) v.findViewById(R.id.rv_order);
         orderAdapter = new OrderAdapter(getContext());
@@ -52,6 +54,9 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener{
         fragment.message = message;
         return fragment;
     }
+
+
+
 
     @Override
     public void onClick(View view) {
@@ -73,6 +78,8 @@ public class OrderFragment extends BaseFragment implements View.OnClickListener{
             }
         };
     }
+
+
 
     class priceOnClick implements View.OnClickListener{
         String id;

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SolfaShop.iml" filepath="$PROJECT_DIR$/SolfaShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Toko-Solfa.iml" filepath="$PROJECT_DIR$/Toko-Solfa.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

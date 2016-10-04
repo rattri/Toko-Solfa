@@ -25,6 +25,7 @@ public class ActivityMain extends BaseActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //String id_kategori;
         baseActivity = this;
         caller = getIntent();
         if (caller != null && caller.getExtras() != null){
@@ -44,6 +45,7 @@ public class ActivityMain extends BaseActivity{
             case FRAGMENT_PRICELIST:
                 manager.beginTransaction().replace(R.id.container, PriceFragment.newInstance("INI PRICE")).commit();
                 isParrentView = false;
+                //id_kategori = caller.getExtras().getString("id");
                 break;
         }
 
